@@ -1,0 +1,49 @@
+{
+    "name": "kwaadpepper/laravel-alma-client",
+    "description": "Alma client to use within Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérémy Munsch",
+            "email": "github@jeremydev.ovh",
+            "homepage": "https://jeremydev.ovh"
+        }
+    ],
+    "homepage": "https://github.com/kwaadpepper/laravel-alma-client",
+    "keywords": [
+        "Laravel",
+        "Alma",
+        "Client"
+    ],
+    "require": {
+        "php": "^7.3",
+        "alma/alma-php-client": "^1.8",
+        "illuminate/support": "~8",
+        "laravel/framework": "~8"
+    },
+    "require-dev": {
+        "slevomat/coding-standard": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kwaadpepper\\AlmaClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kwaadpepper\\AlmaClient\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kwaadpepper\\AlmaClient\\AlmaServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

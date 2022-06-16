@@ -1,0 +1,7 @@
+workspace.code-workspace
+vendor
+.phpunit.result.cache
+.phpunit.cache
+.vscode/launch.json
+build
+.vscode
