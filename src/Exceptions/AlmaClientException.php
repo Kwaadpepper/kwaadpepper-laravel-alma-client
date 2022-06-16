@@ -1,10 +1,10 @@
 <?php
 
-namespace Kwaadpepper\Enum\Exceptions;
+namespace Kwaadpepper\AlmaClient\Exceptions;
 
 /**
  * Alma Client Exception
  */
-class AlmaClientException extends \ErrorException
+class AlmaClientException extends \Exception
 {
 }

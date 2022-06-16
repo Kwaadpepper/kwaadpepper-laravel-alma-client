@@ -3,8 +3,9 @@
 namespace Kwaadpepper\AlmaClient;
 
 use Alma\API\Client as AlmaClient;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Kwaadpepper\Enum\Exceptions\AlmaClientException;
+use Kwaadpepper\AlmaClient\Exceptions\AlmaClientException;
 
 /**
  * @inheritDoc
@@ -41,9 +42,14 @@ class Client extends AlmaClient
     public function checkForEligibility(array $data): Collection
     {
         try {
-            return \collect($this->client->payments->eligibility($data, true));
+            return \collect($this->payments->eligibility($data, true));
         } catch (\Alma\API\RequestError $e) {
-            throw new AlmaClientException("Could not join Alma Services", 0, 1, __FILE__, __LINE__, $e);
+            throw new AlmaClientException(sprintf(
+                "Could not join Alma Services : {$e->response->errorMessage} \n %s",
+                \collect(Arr::dot($e->response->json))->map(function ($v, $k) {
+                    return "$k : $v";
+                })->implode("\n")
+            ), 0, $e);
         }
     }
 }
