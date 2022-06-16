@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "alma/alma-php-client": "^1.8",
+        "alma/alma-php-client": "~1",
         "illuminate/support": "~8",
         "laravel/framework": "~8"
     },

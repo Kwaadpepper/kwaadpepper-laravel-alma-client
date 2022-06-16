@@ -30,6 +30,10 @@ $ composer require kwaadpepper/laravel-alma-client
 3. **Get Alam php doc to implement into your site**
     `https://github.com/alma/alma-php-client`
 
+## Note to fix Alma client version
+
+`composer require alma/alma-php-client`
+
 ---
 ## Change log
 
